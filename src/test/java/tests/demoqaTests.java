@@ -45,7 +45,7 @@ class DemoqaTests {
         $("#react-select-3-input").setValue("Rajasthan");
         $("#react-select-3-input").pressEnter();
         $("#city").click();
-        $("#react-select-4-input").sendKeys("Jaipur");
+        $("#react-select-4-input").setValue("Jaipur");
         $("#react-select-4-input").pressEnter();
         $("#submit").pressEnter();
 
