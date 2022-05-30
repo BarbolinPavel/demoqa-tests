@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class demoqaTests {
+class DemoqaTests {
 
     @BeforeAll
     static void beforeAll(){
@@ -42,15 +42,22 @@ public class demoqaTests {
         $("input#uploadPicture").uploadFromClasspath("imeg.jpg");
         $("#currentAddress").setValue(address);
         $("#state").click();
-        $("#react-select-3-input").sendKeys("Rajasthan");
+        $("#react-select-3-input").setValue("Rajasthan");
         $("#react-select-3-input").pressEnter();
         $("#city").click();
         $("#react-select-4-input").sendKeys("Jaipur");
         $("#react-select-4-input").pressEnter();
         $("#submit").pressEnter();
 
-        $(".modal-content").shouldHave(text(name + " " + surname), text(email), text("Male"), text(mobile),
-                text("01 June,2000"), text(subjects), text("Music"), text("imeg.jpg"), text(address),
+        $(".modal-content").shouldHave(text(name + " " + surname),
+                text(email),
+                text("Male"),
+                text(mobile),
+                text("01 June,2000"),
+                text(subjects),
+                text("Music"),
+                text("imeg.jpg"),
+                text(address),
                 text("Rajasthan Jaipur"));
     }
 }
