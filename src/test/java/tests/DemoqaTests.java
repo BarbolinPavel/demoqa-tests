@@ -9,35 +9,40 @@ public class DemoqaTests extends TestBase {
         String name = "Ivan";
         String surname = "Ivanov";
         String email = "Ivanov1258@gmail.com";
+        String gender = "Male";
         String mobile = "6666666666";
         String subjects = "Maths";
+        String hobbies = "Music";
         String address = "Moscow, Petrovka, 38";
+        String state = "Rajasthan";
+        String city = "Jaipur";
+
 
         registrationFormPage.openPage()
                 .setFirstName(name)
                 .setLastName(surname)
                 .setUserEmail(email)
-                .setGenter("Male")
+                .setGenter(gender)
                 .setUserNumber(mobile)
                 .setDateOfBirth("01","June","2000")
                 .setSubjects(subjects)
-                .setHobbies("Music")
+                .setHobbies(hobbies)
                 .setUploadPicture("imeg.jpg")
                 .setCurrentAddress(address)
-                .setState("Rajasthan")
-                .setCity("Jaipur")
+                .setState(state)
+                .setCity(city)
                 .setSubmit()
                 .openTable();
 
         registrationFormPage.checkResult("Student Name", name + " " + surname)
                         .checkResult("Student Email", email)
-                        .checkResult("Gender","Male")
+                        .checkResult("Gender", gender)
                         .checkResult("Mobile", mobile)
                         .checkResult("Date of Birth", "01 June,2000")
                         .checkResult("Subjects", subjects)
-                        .checkResult("Hobbies", "Music")
+                        .checkResult("Hobbies", hobbies)
                         .checkResult("Picture", "imeg.jpg")
                         .checkResult("Address", address)
-                        .checkResult("State and City", "Rajasthan Jaipur");
+                        .checkResult("State and City", state + " " + city);
     }
 }
